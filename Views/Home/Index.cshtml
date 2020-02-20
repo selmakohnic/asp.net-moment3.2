@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Startsida";
+}
+
+    <div class="text-center">
+        <h1 class="display-4">CD-samling</h1>
+        <h4>På den här webbplatsen kan du samla dina CD-skivor</h4>
+        <p>Om du vill lägga till en CD-skiva från en artist som du tidigare inte har lagt till så behöver du lägga till artisten först och därefter CD-skivan.</p>
+        <div id="indexBtn">
+            <a asp-controller="Artists" asp-action="Index" title="Artister"><div class="btnIndex">Artister</div></a>
+            <a asp-controller="CDs" asp-action="Index" title="CD-skivor"><div class="btnIndex">CD-skivor</div></a>
+        </div>
+    </div>
