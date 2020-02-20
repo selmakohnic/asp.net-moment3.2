@@ -31,5 +31,7 @@ namespace moment3_2.Models
         public int SongsAmount { get; set; }
         public int ArtistId { get; set; }
         public Artist Artist { get; set; }
+
+        public ICollection<User> User { get; set; }
     }
 }

@@ -17,5 +17,7 @@ namespace moment3_2.Data
         public DbSet<CD> CD { get; set; }
 
         public DbSet<Artist> Artist { get; set; }
+
+        public DbSet<moment3_2.Models.User> User { get; set; }
     }
 }
