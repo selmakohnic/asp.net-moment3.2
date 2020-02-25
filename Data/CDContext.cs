@@ -14,6 +14,7 @@ namespace moment3_2.Data
 
         }
 
+        //Referenser till de models som används
         public DbSet<CD> CD { get; set; }
 
         public DbSet<Artist> Artist { get; set; }
