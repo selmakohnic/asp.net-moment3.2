@@ -19,34 +19,19 @@ namespace moment3_2.Controllers
             _context = context;
         }
 
-        //Sökfält
-        /*public ActionResult Index(string searchString)
-        {
-            var cds = from m in _context.CD
-                         select m;
-
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                cds = cds.Where(s => s.Title.Contains(searchString));
-            }
-
-            return View(cds);
-        }*/
-
         // GET: CDs
-        public async Task<IActionResult> Index(string searchString)
+        public ActionResult Index(string searchString)
         {
-            var cds = from m in _context.CD
+            var cds = from m in _context.CD.Include(c => c.Artist)
                       select m;
 
             if (!String.IsNullOrEmpty(searchString))
             {
                 cds = cds.Where(s => s.Title.Contains(searchString));
-                return View(cds);
+                
             }
-
-            var cDContext = _context.CD.Include(c => c.Artist);
-            return View(await cDContext.ToListAsync());
+            
+            return View(cds);
         }
 
         // GET: CDs/Details/5
