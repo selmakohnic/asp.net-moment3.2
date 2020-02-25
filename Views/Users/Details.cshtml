@@ -1,13 +1,12 @@
 ﻿@model moment3_2.Models.User
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Startsida - Låna CD";
 }
 
-<h1>Details</h1>
+<h1>Detaljbeskrivning lån av CD</h1>
 
 <div>
-    <h4>User</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -26,11 +25,11 @@
             @Html.DisplayNameFor(model => model.CD)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CD.Genre)
+            @Html.DisplayFor(model => model.CD.Title)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.UserId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.UserId">Ändra</a> |
+    <a asp-action="Index">Tillbaka till lån av CD-skivor</a>
 </div>

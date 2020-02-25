@@ -84,11 +84,20 @@ body {
     margin-top: 3em;
 }
 
+#indexBtn a {
+    display: inline-block;
+}
+
+#indexBtn a:hover {
+    text-decoration: none;
+}
+
 .addBtn {
     background-color: #3bb87c; 
     color: #fff;
     padding: 1em;
     text-transform: uppercase;
+    font-weight: bold;
 }
 
 .addBtn:hover {
@@ -99,4 +108,17 @@ body {
 .addBtnP {
     margin-top: 1.5em;
     margin-bottom: 2em;
+}
+
+.btn-primary {
+    background-color: #3bb87c !important;
+    border-color: #3bb87c !important;
+}
+
+#searchBtn {
+    border: none;
+    background-color: #000;
+    color: #fff;
+    margin-left: 0.5em;
+    padding: 0.1em 1em;
 }

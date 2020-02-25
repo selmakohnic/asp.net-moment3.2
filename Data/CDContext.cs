@@ -18,6 +18,6 @@ namespace moment3_2.Data
 
         public DbSet<Artist> Artist { get; set; }
 
-        public DbSet<moment3_2.Models.User> User { get; set; }
+        public DbSet<User> User { get; set; }
     }
 }

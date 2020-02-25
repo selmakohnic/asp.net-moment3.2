@@ -1,14 +1,22 @@
 ﻿@model IEnumerable<moment3_2.Models.CD>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Startsida - CD";
 }
 
-<h1>Index</h1>
+<h1>CD-skivor</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
+<p class="addBtnP">
+    <a asp-action="Create" class="addBtn">Lägg till en CD-skiva</a>
 </p>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Sök efter en CD-skiva baserat på titel: @Html.TextBox("SearchString") <input type="submit" value="Sök" id="searchBtn" />
+    </p>
+}
+
 <table class="table">
     <thead>
         <tr>
@@ -34,32 +42,33 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReleaseDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Genre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RecordCompany)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SongsAmount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Artist.ArtistName)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.CDId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CDId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CDId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReleaseDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RecordCompany)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SongsAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Artist.ArtistName)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.CDId">Ändra</a> |
+                    <a asp-action="Details" asp-route-id="@item.CDId">Detaljer</a> |
+                    <a asp-action="Delete" asp-route-id="@item.CDId">Radera</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

@@ -48,7 +48,7 @@ namespace moment3_2.Controllers
         // GET: Users/Create
         public IActionResult Create()
         {
-            ViewData["CDId"] = new SelectList(_context.CD, "CDId", "Genre");
+            ViewData["CDId"] = new SelectList(_context.CD, "CDId", "Title");
             return View();
         }
 
@@ -65,7 +65,7 @@ namespace moment3_2.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CDId"] = new SelectList(_context.CD, "CDId", "Genre", user.CDId);
+            ViewData["CDId"] = new SelectList(_context.CD, "CDId", "Title", user.CDId);
             return View(user);
         }
 
@@ -82,7 +82,7 @@ namespace moment3_2.Controllers
             {
                 return NotFound();
             }
-            ViewData["CDId"] = new SelectList(_context.CD, "CDId", "Genre", user.CDId);
+            ViewData["CDId"] = new SelectList(_context.CD, "CDId", "Title", user.CDId);
             return View(user);
         }
 
@@ -118,7 +118,7 @@ namespace moment3_2.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CDId"] = new SelectList(_context.CD, "CDId", "Genre", user.CDId);
+            ViewData["CDId"] = new SelectList(_context.CD, "CDId", "Title", user.CDId);
             return View(user);
         }
 
